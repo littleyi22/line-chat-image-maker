@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LINE 對話產生器</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-label="編輯區">
+        <header class="topbar">
+          <div>
+            <h1>LINE 對話產生器</h1>
+            <p>黑白講義與考卷用，純本機產生圖片與列印檔。</p>
+          </div>
+          <div class="actions">
+            <button id="downloadPng" type="button">下載 PNG</button>
+            <button id="downloadSvg" type="button">下載 SVG</button>
+            <button id="printPdf" type="button">列印 / PDF</button>
+          </div>
+        </header>
+
+        <div class="panels">
+          <section class="editor-panel" aria-label="對話設定">
+            <div class="panel-block">
+              <div class="block-heading">
+                <h2>版面</h2>
+              </div>
+              <div class="form-grid">
+                <label>
+                  標題
+                  <input id="chatTitle" type="text" value="班級群組" />
+                </label>
+                <label>
+                  頁面寬度
+                  <select id="pageWidth">
+                    <option value="720">講義寬版</option>
+                    <option value="560">考卷窄版</option>
+                    <option value="430">最窄版</option>
+                    <option value="900">投影片寬版</option>
+                  </select>
+                </label>
+              </div>
+              <label class="check-row">
+                <input id="showTime" type="checkbox" />
+                顯示時間
+              </label>
+            </div>
+
+            <div class="panel-block">
+              <div class="block-heading">
+                <h2>角色</h2>
+                <button id="addCharacter" type="button">新增角色</button>
+              </div>
+              <div id="characters" class="character-list"></div>
+            </div>
+
+            <div class="panel-block">
+              <div class="block-heading">
+                <h2>對話</h2>
+                <button id="addMessage" type="button">新增訊息</button>
+              </div>
+              <div id="messages" class="message-list"></div>
+            </div>
+          </section>
+
+          <section class="preview-panel" aria-label="預覽">
+            <div class="preview-toolbar">
+              <strong>即時預覽</strong>
+              <span>輸出為黑白線稿</span>
+            </div>
+            <div id="previewWrap" class="preview-wrap">
+              <svg id="chatSvg" role="img" aria-label="LINE 對話圖片預覽"></svg>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+

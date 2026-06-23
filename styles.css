@@ -1,0 +1,297 @@
+﻿:root {
+  --ink: #111;
+  --muted: #666;
+  --paper: #fff;
+  --line: #c9c9c9;
+  --soft: #f5f5f5;
+  --panel: #fafafa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Noto Sans TC", "Microsoft JhengHei", "PingFang TC", Arial, sans-serif;
+  color: var(--ink);
+  background: #eee;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  min-height: 36px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+button:hover {
+  background: var(--soft);
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 18px;
+}
+
+.workspace {
+  max-width: 1480px;
+  margin: 0 auto;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.topbar h1 {
+  margin: 0 0 4px;
+  font-size: 28px;
+}
+
+.topbar p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: minmax(360px, 470px) minmax(420px, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.editor-panel,
+.preview-panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.editor-panel {
+  padding: 14px;
+}
+
+.preview-panel {
+  min-height: calc(100vh - 100px);
+  overflow: hidden;
+}
+
+.panel-block + .panel-block {
+  border-top: 1px solid var(--line);
+  margin-top: 14px;
+  padding-top: 14px;
+}
+
+.block-heading,
+.preview-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.block-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.preview-toolbar {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.preview-toolbar span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 150px;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  background: var(--paper);
+  padding: 8px;
+}
+
+textarea {
+  min-height: 72px;
+  resize: vertical;
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  color: var(--ink);
+}
+
+.check-row input {
+  width: auto;
+}
+
+.character-list,
+.message-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.row-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  padding: 10px;
+}
+
+.row-grid {
+  display: grid;
+  grid-template-columns: 1fr 100px 110px 72px 40px;
+  gap: 8px;
+  align-items: end;
+}
+
+.message-grid {
+  display: grid;
+  grid-template-columns: 120px 72px 1fr 40px;
+  gap: 8px;
+  align-items: start;
+}
+
+.remove-btn {
+  width: 40px;
+  padding: 0;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.preview-wrap {
+  padding: 18px;
+  overflow: auto;
+  background:
+    linear-gradient(45deg, #f7f7f7 25%, transparent 25%),
+    linear-gradient(-45deg, #f7f7f7 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f7f7f7 75%),
+    linear-gradient(-45deg, transparent 75%, #f7f7f7 75%);
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0;
+  background-size: 20px 20px;
+}
+
+#chatSvg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+}
+
+@media (max-width: 980px) {
+  .topbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .actions {
+    justify-content: flex-start;
+  }
+
+  .panels {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-panel {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 10px;
+  }
+
+  .form-grid,
+  .row-grid,
+  .message-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .remove-btn {
+    width: 100%;
+  }
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .topbar,
+  .editor-panel,
+  .preview-toolbar {
+    display: none;
+  }
+
+  .app-shell,
+  .preview-wrap {
+    padding: 0;
+  }
+
+  .panels {
+    display: block;
+  }
+
+  .preview-panel {
+    border: 0;
+  }
+
+  #chatSvg {
+    box-shadow: none;
+    width: 100%;
+  }
+}
+
