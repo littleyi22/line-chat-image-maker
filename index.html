@@ -1,86 +1,28 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hant">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LINE 對話產生器</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main class="app-shell">
-      <section class="workspace" aria-label="編輯區">
-        <header class="topbar">
-          <div>
-            <h1>LINE 對話產生器</h1>
-            <p>黑白講義與考卷用，純本機產生圖片與列印檔。</p>
-          </div>
-          <div class="actions">
-            <button id="downloadPng" type="button">下載 PNG</button>
-            <button id="downloadSvg" type="button">下載 SVG</button>
-            <button id="printPdf" type="button">列印 / PDF</button>
-          </div>
-        </header>
-
-        <div class="panels">
-          <section class="editor-panel" aria-label="對話設定">
-            <div class="panel-block">
-              <div class="block-heading">
-                <h2>版面</h2>
-              </div>
-              <div class="form-grid">
-                <label>
-                  標題
-                  <input id="chatTitle" type="text" value="班級群組" />
-                </label>
-                <label>
-                  頁面寬度
-                  <select id="pageWidth">
-                    <option value="720">講義寬版</option>
-                    <option value="560">考卷窄版</option>
-                    <option value="430">最窄版</option>
-                    <option value="900">投影片寬版</option>
-                  </select>
-                </label>
-              </div>
-              <label class="check-row">
-                <input id="showTime" type="checkbox" />
-                顯示時間
-              </label>
-            </div>
-
-            <div class="panel-block">
-              <div class="block-heading">
-                <h2>角色</h2>
-                <button id="addCharacter" type="button">新增角色</button>
-              </div>
-              <div id="characters" class="character-list"></div>
-            </div>
-
-            <div class="panel-block">
-              <div class="block-heading">
-                <h2>對話</h2>
-                <button id="addMessage" type="button">新增訊息</button>
-              </div>
-              <div id="messages" class="message-list"></div>
-            </div>
-          </section>
-
-          <section class="preview-panel" aria-label="預覽">
-            <div class="preview-toolbar">
-              <strong>即時預覽</strong>
-              <span>輸出為黑白線稿</span>
-            </div>
-            <div id="previewWrap" class="preview-wrap">
-              <svg id="chatSvg" role="img" aria-label="LINE 對話圖片預覽"></svg>
-            </div>
-          </section>
-        </div>
-      </section>
-    </main>
-
-    <script src="app.js"></script>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="網站搬家通知，請前往奕鈞老師數位教學備課室。">
+<meta name="ijun-relocation" content="ijun-github-relocation-20261021">
+<link rel="canonical" href="https://www.ijun-ai.com/">
+<title>網站搬家通知｜奕鈞老師</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:28px 18px;background:#fff9ee;color:#332a20;font-family:"Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif;line-height:1.8}
+main{width:100%;max-width:640px;padding:48px 36px;background:#fff;border:1px solid #f0dbb7;border-top:7px solid #f6aa24;border-radius:22px;box-shadow:0 16px 50px #8b5c1710;text-align:center}
+.brand{margin:0;color:#985506;font-weight:700;letter-spacing:.08em;font-size:14px}.icon{font-size:52px;margin:16px 0 8px}h1{font-size:34px;line-height:1.4;margin:12px 0 18px}p{margin:12px 0}.original{color:#796e60;font-size:14px;overflow-wrap:anywhere}.button{display:inline-block;margin:18px 0 12px;padding:14px 28px;background:#f5a51b;color:#332100;border-radius:12px;font-size:18px;font-weight:700;text-decoration:none}.button:hover{background:#ffc35a}.button:focus-visible{outline:3px solid #654016;outline-offset:5px}.url{color:#925208;overflow-wrap:anywhere;font-size:15px}footer{margin-top:24px;padding-top:20px;border-top:1px solid #f0e7db;color:#857667;font-size:13px}@media(max-width:480px){main{padding:34px 22px}h1{font-size:29px}}
+</style>
+</head>
+<body>
+<main>
+<p class="brand">奕鈞老師數位教學備課室</p>
+<div class="icon" aria-hidden="true">🏠</div>
+<h1>網站搬家囉！</h1>
+<p>請前往新網站，瀏覽最新的教學工具與教材。</p>
+<p class="original">原網站：LINE 對話產生器</p>
+<a class="button" href="https://www.ijun-ai.com/">前往新網站 →</a>
+<p><a class="url" href="https://www.ijun-ai.com/">https://www.ijun-ai.com/</a></p>
+<footer>感謝您的支持與使用。</footer>
+</main>
+</body>
 </html>
-
-
-
